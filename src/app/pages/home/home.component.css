@@ -1,0 +1,38 @@
+.home {
+  height: 750px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1350px;
+  width: 100%;
+}
+.home-section-1,
+.home-section-2 {
+  max-width: 50%;
+  display: flex;
+}
+.home-section-1 {
+  flex-flow: column nowrap;
+}
+.home-section-2 {
+  flex-flow: row nowrap;
+}
+.home-info {
+  width: 250px;
+}
+.hero-image {
+  overflow: hidden;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 400px;
+  height: 100px;
+}
+img {
+  background: lightblue url(../../../../public/images/hero.jpg) no-repeat fixed
+    center;
+  width: 400px;
+  height: 100px;
+}

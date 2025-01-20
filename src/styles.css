@@ -22,3 +22,14 @@ app-root {
   flex-direction: column;
   height: 100%;
 }
+
+:root {
+  --color-header: #f08080;
+  --color-header-text: #ffffff;
+  --color-footer: #1c1c1c;
+  --color-background: #ffe4e1;
+  --color-text: #333333;
+  --color-accent: #ff7f50;
+  --color-secondary-accent: #80cbc4;
+  --color-border: #cccccc;
+}
