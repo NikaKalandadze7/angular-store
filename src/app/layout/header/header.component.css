@@ -1,0 +1,75 @@
+.header {
+  height: 70px;
+  width: 100%;
+  background-color: lightcoral;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  font-size: 52px;
+  color: white;
+}
+.navigation {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1350px;
+  padding: 20px;
+}
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.nav-link,
+.nav-link:active {
+  color: white;
+  font-weight: bold;
+}
+.nav-link:hover,
+.logo:hover {
+  color: #ff4400;
+  transition: 0.3s;
+}
+
+.user-area,
+.auth {
+  display: flex;
+  flex-flow: row nowrap;
+
+  align-items: center;
+}
+.auth {
+  justify-content: center;
+  gap: 5px;
+}
+.user-area {
+  justify-content: space-between;
+  gap: 30px;
+}
+.auth-logo,
+.auth-link,
+.auth-logo:active,
+.auth-link:active,
+.slash,
+.cart-logo,
+.cart-logo:active {
+  color: #80cbc4;
+  font-weight: 600;
+}
+.auth-logo:hover,
+.auth-link:hover,
+.cart-logo:hover {
+  color: #ff4400;
+  transition: 0.3s;
+}
+.auth-link {
+  font-size: bold;
+}
