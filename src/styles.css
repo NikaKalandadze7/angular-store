@@ -5,7 +5,9 @@
   text-decoration: none;
   outline: none;
 }
-
+a:hover {
+  cursor: pointer;
+}
 html,
 body {
   height: 100%;

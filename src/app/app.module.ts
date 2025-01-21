@@ -8,14 +8,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HomeComponent } from './pages/home/home.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent },
   // { path: 'about', component: AboutComponent },
   // { path: 'contact', component: ContactComponent },
   // { path: 'products', component: ProductsComponent },
   // { path: 'products/:id', component: ProductComponent },
   // {
-  //   path: 'dashboard',
-  //   component: DashboardComponent,
+  //   path: 'home',
+  //   loadChildren: (),
   //   canActivate: [authGuard],
   // },
   // { path: '**', component: NotFoundComponent },
