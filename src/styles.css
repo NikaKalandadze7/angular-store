@@ -35,3 +35,11 @@ app-root {
   --color-secondary-accent: #80cbc4;
   --color-border: #cccccc;
 }
+.container {
+  width: 1250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+}

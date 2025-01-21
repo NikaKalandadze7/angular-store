@@ -4,7 +4,6 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  max-width: 1350px;
   width: 100%;
 }
 .home-section-1,
@@ -14,26 +13,137 @@
 }
 .home-section-1 {
   flex-flow: column nowrap;
+  gap: 70px;
 }
 .home-section-2 {
   flex-flow: row nowrap;
+  gap: 40px;
+  padding-left: 70px;
+  position: relative;
 }
 .home-info {
-  width: 250px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  gap: 30px;
+}
+.home-header {
+  font-size: 52px;
+  color: #f08080;
+  width: 100%;
+}
+.home-text {
+  color: #ff7f50;
+}
+.explore-button {
+  background-color: #80cbc4;
+  font-size: 24px;
+  color: white;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  width: 200px;
+  height: 50px;
+  transition: 0.3s;
+}
+.explore-button:hover {
+  background-color: #ff7f50;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .hero-image {
   overflow: hidden;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  width: 400px;
-  height: 300px;
-}
-img {
-  background: lightblue url(../../../../public/images/hero.jpg) no-repeat fixed
-    center;
-  width: 400px;
-  height: 300px;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  width: 450px;
+  height: 550px;
+  background: lightblue url("../../../../public/images/hero.jpg") no-repeat
+    center center;
   background-size: cover;
+  z-index: 10;
+}
+.flower {
+  position: absolute;
+  background-color: #80cbc4;
+  z-index: 1;
+  width: 200px;
+  aspect-ratio: 1;
+  right: 120px;
+  top: -20px;
+  --g: /20.56% 20.56% radial-gradient(#000 calc(71% - 1px), #0000 71%) no-repeat;
+  mask: 100% 50% var(--g), 93.301% 75% var(--g), 75% 93.301% var(--g),
+    50% 100% var(--g), 25% 93.301% var(--g), 6.699% 75% var(--g),
+    0% 50% var(--g), 6.699% 25% var(--g), 25% 6.699% var(--g), 50% 0% var(--g),
+    75% 6.699% var(--g), 93.301% 25% var(--g),
+    radial-gradient(100% 100%, #000 38.366%, #0000 calc(38.366% + 1px));
+}
+.wavy-line {
+  --s: 24px; /* size of the wave */
+  --b: 8px; /* thickness of the line */
+  --m: 0.4; /* curvature of the wave [0 2] */
+  position: absolute;
+  background-color: #ff7f50;
+  z-index: 1;
+  --R: calc(var(--s) * sqrt(var(--m) * var(--m) + 1) + var(--b) / 2);
+  height: calc(2 * var(--R));
+  width: 300px;
+  left: -90px;
+  bottom: 100px;
+  transform: rotate(110deg);
+  --_g: #0000 calc(99% - var(--b)), #000 calc(101% - var(--b)) 99%, #0000 101%;
+  mask: radial-gradient(
+        var(--R) at left 50% bottom calc(-1 * var(--m) * var(--s)),
+        var(--_g)
+      )
+      calc(50% - 2 * var(--s)) calc(50% - var(--s) / 2 - var(--b) / 2) /
+      calc(4 * var(--s)) calc(var(--s) + var(--b)) repeat-x,
+    radial-gradient(
+        var(--R) at left 50% top calc(-1 * var(--m) * var(--s)),
+        var(--_g)
+      )
+      50% calc(50% + var(--s) / 2 + var(--b) / 2) / calc(4 * var(--s))
+      calc(var(--s) + var(--b)) repeat-x;
+}
+.dashed-circle {
+  --n: 33; /* number of dashes */
+  --d: 8deg; /* control the space between dashes */
+
+  height: 200px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 10px; /* border thickness */
+  /* the coloration (more examples: https://css-tip.com/dashed-rounded-border/ */
+  background: repeating-conic-gradient(
+    #80cbc4 0 calc(360deg / var(--n)),
+    #ff7f50 0 calc(2 * 360deg / var(--n))
+  );
+  mask: linear-gradient(#0000 0 0) content-box intersect,
+    repeating-conic-gradient(
+      from calc(var(--d) / 2),
+      #000 0 calc(360deg / var(--n) - var(--d)),
+      #0000 0 calc(360deg / var(--n))
+    );
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  aspect-ratio: 1;
+  left: 30px;
+  top: 30px;
+}
+.home-stats {
+  list-style-type: none;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+  justify-content: center;
+  z-index: 10;
+}
+.stat-header {
+  font-size: 32px;
+  color: #f08080;
+  font-weight: bold;
 }

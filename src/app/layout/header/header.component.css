@@ -7,9 +7,21 @@
   justify-content: center;
   align-items: center;
 }
-.logo {
-  font-size: 52px;
+.header-logo {
   color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.logo {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 52px;
+}
+.logo-text {
+  font-size: 24px;
 }
 .navigation {
   display: flex;
@@ -32,9 +44,10 @@
 .nav-link:active {
   color: white;
   font-weight: bold;
+  transition: 0.3s;
 }
 .nav-link:hover,
-.logo:hover {
+.header-logo:hover {
   color: #ff4400;
   transition: 0.3s;
 }
@@ -63,6 +76,7 @@
 .cart-logo:active {
   color: #80cbc4;
   font-weight: 600;
+  transition: 0.3s;
 }
 .auth-logo:hover,
 .auth-link:hover,
