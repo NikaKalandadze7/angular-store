@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ProductsService } from '../../core/services/products.service';
+import { take, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -10,10 +12,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductsComponent {
   data: any;
-  constructor(private http: HttpClient) {}
+
+  constructor(private productsService: ProductsService) {}
+
   ngOnInit() {
-    this.http
-      .get('https://jsonplaceholder.typicode.com/posts')
+    this.productsService
+      .getProducts()
+      .pipe(take(1))
       .subscribe((response) => {
         this.data = response;
         console.log(response);

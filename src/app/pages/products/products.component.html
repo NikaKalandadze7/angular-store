@@ -1,2 +1,5 @@
 <p>products works!</p>
-<!-- <app-product-card /> -->
+
+<div *ngFor="let item of data">
+  <app-product-card [item]="item" />
+</div>

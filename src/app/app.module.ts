@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductCardComponent } from './pages/products/product-card/product-card.component';
+import { ProductsModule } from './pages/products/products.module';
 
 const appRoutes: Routes = [
   // { path: '', redirectTo: 'home' },
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
+    ProductsModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [provideAnimationsAsync()],

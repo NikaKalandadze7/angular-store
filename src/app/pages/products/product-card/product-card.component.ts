@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-product-card',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
 })
-export class ProductCardComponent {}
+export class ProductCardComponent {
+  @Input() item: any;
+
+  onAddToCart() {
+    this.item.id;
+  }
+}
