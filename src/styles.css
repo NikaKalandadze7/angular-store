@@ -36,10 +36,11 @@ app-root {
   --color-border: #cccccc;
 }
 .container {
-  width: 1250px;
+  max-width: 1250px;
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 20px auto;
   height: 100%;
 }

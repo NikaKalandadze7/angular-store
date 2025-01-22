@@ -8,8 +8,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductsComponent } from './pages/products/products.component';
-import { ProductCardComponent } from './pages/products/product-card/product-card.component';
 import { ProductsModule } from './pages/products/products.module';
+import { ProductDetailsComponent } from './pages/products/product-details/product-details.component';
 
 const appRoutes: Routes = [
   // { path: '', redirectTo: 'home' },
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   // { path: 'about', component: AboutComponent },
   // { path: 'contact', component: ContactComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'products/:id', component: ProductCardComponent },
+  { path: 'products/:id', component: ProductDetailsComponent },
   // {
   //   path: 'home',
   //   loadChildren: (),

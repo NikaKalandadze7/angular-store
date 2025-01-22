@@ -1,0 +1,15 @@
+.dropdown-body {
+  padding: 8px !important;
+}
+.filters {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: space-between;
+}
+.search {
+  padding: 8px !important;
+}
+mat-label {
+  color: #ff7f50;
+}

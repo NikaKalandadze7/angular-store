@@ -1,0 +1,32 @@
+<div class="filters">
+  <!-- categories -->
+  <mat-form-field appearance="fill" class="dropdown-body">
+    <mat-label>Choose a category</mat-label>
+    <mat-select (selectionChange)="onCategoryChange($event.value)">
+      <mat-option value="">SHOW ALL</mat-option>
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{ category.toUpperCase() }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!-- search -->
+  <mat-form-field class="search">
+    <mat-label>Search Product</mat-label>
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="value"
+      (keyup)="onSearchInputChange()"
+    />
+    @if (value) {
+    <button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="value = ''; onSearchInputChange()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    }
+  </mat-form-field>
+</div>

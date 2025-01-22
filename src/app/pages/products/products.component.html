@@ -1,5 +1,17 @@
-<p>products works!</p>
-
-<div *ngFor="let item of data">
-  <app-product-card [item]="item" />
+<div class="container">
+  <div class="category-dropdown">
+    <app-product-filters
+      [categories]="categoryData"
+      (categoryChange)="onCategoryChange($event)"
+      (searchQueryChange)="onSearchQueryChange($event)"
+    ></app-product-filters>
+  </div>
+  <div class="products-list" *ngIf="filteredProducts">
+    <div *ngFor="let item of filteredProducts">
+      <app-product-card [item]="item"></app-product-card>
+    </div>
+    <ng-template #loading>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </ng-template>
+  </div>
 </div>
