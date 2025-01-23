@@ -41,6 +41,6 @@ app-root {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin: 20px auto;
+  margin: 40px auto;
   height: 100%;
 }

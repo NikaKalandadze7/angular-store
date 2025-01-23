@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="cart-container">
+    <h2 class="cart-header">Your Cart:</h2>
+    <div *ngFor="let item of cart">
+      <div appearance="outlined" class="cart-card">
+        <img src="{{ item.image }}" class="cart-image" />
+        <h3 class="cart-item-title">{{ item.title }}</h3>
+        <div class="product-misc">
+          <div class="product-price">
+            <ng-container *ngIf="item.discount > 5; else noDiscount">
+              <span class="discounted-price">{{
+                item.price - (item.price * item.discount) / 100 | currency
+              }}</span>
+              <span class="old-price">{{ item.price | currency }}</span>
+            </ng-container>
+            <ng-template #noDiscount>
+              {{ item.price | currency }}
+            </ng-template>
+          </div>
+          <p class="product-quantity">
+            <span>{{ item.quantity }}</span>
+          </p>
+        </div>
+        <div class="example-button-container">
+          <button mat-fab extended (click)="removeFromCart(item.id)">
+            <mat-icon>remove_shopping_cart</mat-icon>
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="cart-bottom">
+      <div class="cart-total">
+        <h3>Total Price: {{ cartTotalPrice | currency }}</h3>
+        <h4>Number of Items: {{ cartTotalQuantity }}</h4>
+      </div>
+      <button mat-raised-button color="primary" (click)="checkout()">
+        Checkout
+      </button>
+    </div>
+  </div>
+</div>

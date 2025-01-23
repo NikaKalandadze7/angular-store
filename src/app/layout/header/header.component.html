@@ -20,8 +20,11 @@
         <a routerLink="" class="auth-link"> Register </a>
       </div>
       <div>
-        <a routerLink="">
-          <span class="material-symbols-outlined cart-logo">
+        <a routerLink="/cart">
+          <span
+            matBadge="{{ cartTotalQuantity }}"
+            class="material-symbols-outlined cart-logo"
+          >
             shopping_cart
           </span>
         </a>

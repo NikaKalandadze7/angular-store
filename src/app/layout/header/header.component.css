@@ -85,5 +85,8 @@
   transition: 0.3s;
 }
 .auth-link {
-  font-size: bold;
+  font-weight: bold;
+}
+.cart-logo {
+  font-size: 38px;
 }

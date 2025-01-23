@@ -28,7 +28,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions class="card-buttons">
-    <button mat-button (click)="onAddToCart()">Add to cart</button>
+    <button mat-button (click)="addToCart(item)">Add to cart</button>
     <button mat-button [routerLink]="'/products/' + item.id">MORE</button>
   </mat-card-actions>
 </mat-card>
