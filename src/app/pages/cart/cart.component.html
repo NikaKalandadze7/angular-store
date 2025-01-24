@@ -17,11 +17,11 @@
               {{ item.price | currency }}
             </ng-template>
           </div>
+        </div>
+        <div class="cart-item-end">
           <p class="product-quantity">
             <span>{{ item.quantity }}</span>
           </p>
-        </div>
-        <div class="example-button-container">
           <button mat-fab extended (click)="removeFromCart(item.id)">
             <mat-icon>remove_shopping_cart</mat-icon>
             Remove
@@ -30,13 +30,19 @@
       </div>
     </div>
     <div class="cart-bottom">
-      <div class="cart-total">
-        <h3>Total Price: {{ cartTotalPrice | currency }}</h3>
-        <h4>Number of Items: {{ cartTotalQuantity }}</h4>
-      </div>
-      <button mat-raised-button color="primary" (click)="checkout()">
-        Checkout
-      </button>
+      <ng-container *ngIf="cartTotalQuantity > 0; else noItemsInCart">
+        <div class="cart-total">
+          <h3>Total Price: {{ cartTotalPrice | currency }}</h3>
+          <h4>Number of Items: {{ cartTotalQuantity }}</h4>
+        </div>
+        <button mat-raised-button color="primary" (click)="checkout()">
+          Checkout
+        </button>
+      </ng-container>
+
+      <ng-template #noItemsInCart>
+        <h3>There are No items In your Cart</h3>
+      </ng-template>
     </div>
   </div>
 </div>

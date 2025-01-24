@@ -15,6 +15,10 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CommonModule } from '@angular/common';
 import { CartModule } from './pages/cart/cart.module';
+import { ContactModule } from './pages/contact/contact.module';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { AuthModule } from './pages/auth/auth.module';
 
 const appRoutes: Routes = [
   // { path: '', redirectTo: 'home' },
@@ -24,10 +28,12 @@ const appRoutes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'sign-up', component: RegisterComponent },
   { path: '**', component: NotFoundComponent },
 ];
 @NgModule({
-  declarations: [AppComponent, AboutComponent, ContactComponent],
+  declarations: [AppComponent, AboutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,6 +42,8 @@ const appRoutes: Routes = [
     CartModule,
     RouterModule.forRoot(appRoutes),
     CommonModule,
+    ContactModule,
+    AuthModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

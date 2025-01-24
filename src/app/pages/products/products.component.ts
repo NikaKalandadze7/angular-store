@@ -33,7 +33,6 @@ export class ProductsComponent {
       .pipe(take(1))
       .subscribe((response) => {
         this.categoryData = response.categories;
-        console.log('Categories:', this.categoryData);
       });
   }
 

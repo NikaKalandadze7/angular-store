@@ -1,0 +1,23 @@
+.contact {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 40%;
+  padding: 30px 0;
+}
+h4 {
+  font-size: 18px;
+}
+.contact-form {
+  display: flex;
+  flex-flow: column;
+}
+.name {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}

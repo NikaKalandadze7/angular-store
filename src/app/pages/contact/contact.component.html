@@ -1,1 +1,43 @@
-<p>contact works!</p>
+<div class="container">
+  <mat-card appearance="outlined" class="contact">
+    <h4>Contact Us</h4>
+    <p>You will hear from us at the earliest!</p>
+    <mat-card-content
+      ><form class="contact-form">
+        <div class="name">
+          <mat-form-field class="">
+            <mat-label>First name</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="">
+            <mat-label>Last Name</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            [formControl]="emailFormControl"
+            placeholder="Ex. pat@example.com"
+          />
+          @if (emailFormControl.hasError('email') &&
+          !emailFormControl.hasError('required')) {
+          <mat-error>Please enter a valid email address</mat-error>
+          } @if (emailFormControl.hasError('required')) {
+          <mat-error>Email is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field class="">
+          <mat-label>Telephone</mat-label>
+          <span matTextPrefix>+995 &nbsp;</span>
+          <input type="tel" matInput placeholder="555-555-555" />
+        </mat-form-field>
+        <button mat-raised-button>Send</button>
+      </form>
+    </mat-card-content>
+    <p>You Can also Contact us at +995-555-555-555</p>
+  </mat-card>
+</div>

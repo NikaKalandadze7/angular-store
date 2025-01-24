@@ -1,0 +1,64 @@
+.about {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.about-header {
+  color: #80cbc4;
+  font-size: 38px;
+}
+.team-layout {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.person-section {
+  border-radius: 20px;
+  background-color: #eee;
+  width: calc(25% - 40px);
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  box-shadow: 10px 10px 20px -15px rgba(0, 0, 0, 0.75);
+}
+.person-name {
+  color: #ff7f50;
+  font-size: 18px;
+}
+.about-person {
+  width: 80%;
+}
+.profile-img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+.position {
+  font-size: 12px;
+  font-weight: bold;
+}
+.socials {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+  list-style-type: none;
+}
+.socials-logo,
+.socials-logo:active {
+  color: black;
+  font-size: 18px;
+}
+
+.socials-logo:hover {
+  color: #ff7f50;
+  transition: 0.3s;
+}
