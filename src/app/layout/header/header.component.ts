@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../core/services/cart.service';
 @Component({
   selector: 'app-header',
@@ -7,7 +7,7 @@ import { CartService } from '../../core/services/cart.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   cartTotalQuantity: number = 0;
   constructor(private cartService: CartService) {}
 

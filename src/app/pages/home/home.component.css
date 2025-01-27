@@ -1,10 +1,11 @@
 .home {
-  height: 750px;
+  min-height: 70vhpx;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 20;
 }
 .home-section-1,
 .home-section-2 {
@@ -31,14 +32,14 @@
 }
 .home-header {
   font-size: 52px;
-  color: #f08080;
+  color: var(--color-accent);
   width: 100%;
 }
 .home-text {
-  color: #ff7f50;
+  color: var(--color-accent);
 }
 .explore-button {
-  background-color: #80cbc4;
+  background-color: var(--color-secondary-accent);
   font-size: 24px;
   color: white;
   border-top-right-radius: 20px;
@@ -68,7 +69,7 @@
 }
 .flower {
   position: absolute;
-  background-color: #80cbc4;
+  background-color: var(--color-secondary-accent);
   z-index: 1;
   width: 200px;
   aspect-ratio: 1;
@@ -86,7 +87,7 @@
   --b: 8px; /* thickness of the line */
   --m: 0.4; /* curvature of the wave [0 2] */
   position: absolute;
-  background-color: #ff7f50;
+  background-color: var(--color-accent);
   z-index: 1;
   --R: calc(var(--s) * sqrt(var(--m) * var(--m) + 1) + var(--b) / 2);
   height: calc(2 * var(--R));
@@ -118,8 +119,8 @@
   padding: 10px; /* border thickness */
   /* the coloration (more examples: https://css-tip.com/dashed-rounded-border/ */
   background: repeating-conic-gradient(
-    #80cbc4 0 calc(360deg / var(--n)),
-    #ff7f50 0 calc(2 * 360deg / var(--n))
+    var(--color-secondary-accent) 0 calc(360deg / var(--n)),
+    var(--color-accent) 0 calc(2 * 360deg / var(--n))
   );
   mask: linear-gradient(#0000 0 0) content-box intersect,
     repeating-conic-gradient(
@@ -144,6 +145,90 @@
 }
 .stat-header {
   font-size: 32px;
-  color: #f08080;
+  color: var(--color-header);
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .home-section-1,
+  .home-section-2 {
+    max-width: 80%;
+    display: flex;
+  }
+  .home-section-2 {
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .home {
+    flex-flow: column;
+    gap: 50px;
+    margin: 0 20px;
+  }
+  .home-info {
+    margin-right: 0;
+    align-items: flex-start;
+  }
+
+  .hero-image {
+    height: 50vh;
+    border-radius: 100px 100px 30px 30px;
+  }
+
+  .home-header {
+    font-size: 48px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .explore-button {
+    position: absolute;
+    bottom: 20%;
+    right: 10%;
+    z-index: 12;
+  }
+
+  .home-stats {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .stat {
+    min-width: 30%;
+  }
+  .wavy-line {
+    transform: rotate(60deg);
+  }
+  .flower {
+    left: -50px;
+    top: -40px;
+  }
+  .dashed-circle {
+    right: -101px;
+    bottom: -202px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-header {
+    font-size: 40px;
+  }
+  .hero-image {
+    height: 30vh;
+    width: 300px;
+  }
+  .home-info {
+    gap: 20px;
+  }
+
+  .explore-button {
+    width: 140px;
+    font-size: 20px;
+    bottom: 380px;
+    right: 12%;
+    z-index: 12;
+  }
 }

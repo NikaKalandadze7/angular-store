@@ -1,6 +1,6 @@
 .flower {
   position: absolute;
-  background-color: #80cbc4;
+  background-color: var(--color-secondary-accent);
   z-index: 1;
   width: 200px;
   aspect-ratio: 1;
@@ -18,7 +18,7 @@
   --b: 8px; /* thickness of the line */
   --m: 0.4; /* curvature of the wave [0 2] */
   position: absolute;
-  background-color: #ff7f50;
+  background-color: var(--color-accent);
   z-index: 1;
   --R: calc(var(--s) * sqrt(var(--m) * var(--m) + 1) + var(--b) / 2);
   height: calc(2 * var(--R));
@@ -50,8 +50,8 @@
   padding: 10px; /* border thickness */
   /* the coloration (more examples: https://css-tip.com/dashed-rounded-border/ */
   background: repeating-conic-gradient(
-    #80cbc4 0 calc(360deg / var(--n)),
-    #ff7f50 0 calc(2 * 360deg / var(--n))
+    var(--color-secondary-accent) 0 calc(360deg / var(--n)),
+    var(--color-accent) 0 calc(2 * 360deg / var(--n))
   );
   mask: linear-gradient(#0000 0 0) content-box intersect,
     repeating-conic-gradient(
@@ -80,7 +80,7 @@
   gap: 5px;
   font-size: 24px;
   flex-flow: row nowrap;
-  color: #ff7f50;
+  color: var(--color-accent);
   margin-left: 30px;
   font-weight: bold;
 }
@@ -97,11 +97,11 @@
 
 .discounted-price {
   font-weight: bold;
-  color: #ff5722;
+  color: var(--color-tretiary-accent);
 }
 
 .discount-percentage {
-  color: #80cbc4;
+  color: var(--color-secondary-accent);
   font-weight: bold;
   font-size: 18px;
 }

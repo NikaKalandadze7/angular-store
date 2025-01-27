@@ -1,0 +1,29 @@
+.register {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  padding: 30px 0;
+}
+h4 {
+  font-size: 18px;
+}
+.register-form {
+  display: flex;
+  flex-flow: column;
+}
+.name {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.click-here {
+  color: var(--color-accent);
+}
+.register-btn {
+  margin-top: 55px;
+}

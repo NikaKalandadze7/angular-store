@@ -11,5 +11,5 @@
   padding: 8px !important;
 }
 mat-label {
-  color: #ff7f50;
+  color: var(--color-accent);
 }

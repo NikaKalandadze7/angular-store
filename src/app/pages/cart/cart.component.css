@@ -1,5 +1,5 @@
 .cart-header {
-  color: #80cbc4;
+  color: var(--color-secondary-accent);
   font-size: 38px;
 }
 .cart-container {
@@ -30,7 +30,7 @@
   align-items: center;
   gap: 5px;
   flex-flow: column nowrap;
-  color: #ff7f50;
+  color: var(--color-accent);
   margin-left: 30px;
   font-weight: 500;
 }
@@ -46,7 +46,7 @@
 }
 
 .discounted-price {
-  color: #ff5722;
+  color: var(--color-tretiary-accent);
 }
 .product-misc {
   display: flex;
@@ -57,14 +57,14 @@
 }
 .product-quantity {
   border-radius: 50%;
-  background-color: #80cbc4;
+  background-color: var(--color-secondary-accent);
   height: 30px;
   width: 30px;
   box-shadow: 0 0 5px 2px #666;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ff5722;
+  color: var(--color-tretiary-accent);
 }
 .cart-bottom {
   display: flex;

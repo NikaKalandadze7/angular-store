@@ -2,10 +2,18 @@
   <nav class="navigation">
     <div>
       <a href="/" class="header-logo">
-        <span class="material-symbols-outlined logo"> storefront </span>
+        <span class="material-symbols-outlined logo">storefront</span>
         <span class="logo-text">StoreLogo</span>
       </a>
     </div>
+    <button
+      mat-button
+      class="menu-toggle"
+      [matMenuTriggerFor]="afterMenu"
+      aria-label="Toggle Menu"
+    >
+      <span class="material-symbols-outlined menu-btn">menu</span>
+    </button>
     <ul class="nav-menu">
       <li><a routerLink="" class="nav-link">Home</a></li>
       <li><a routerLink="/products" class="nav-link">Products</a></li>
@@ -14,10 +22,28 @@
     </ul>
     <div class="user-area">
       <div class="auth">
-        <span class="material-symbols-outlined auth-logo"> person </span>
+        <span class="material-symbols-outlined auth-logo">person</span>
         <a routerLink="/login" class="auth-link">Login</a>
-        <span class="slash"> / </span>
-        <a routerLink="/sign-up" class="auth-link"> Register </a>
+        <span class="slash">/</span>
+        <a routerLink="/sign-up" class="auth-link">Register</a>
+      </div>
+      <div class="auth-hidden">
+        <span
+          class="material-symbols-outlined auth-logo"
+          mat-button
+          [matMenuTriggerFor]="userMenu"
+          aria-label="User Menu"
+        >
+          person
+        </span>
+        <mat-menu #userMenu="matMenu" xPosition="before">
+          <button mat-menu-item routerLink="/login" class="auth-link">
+            Login
+          </button>
+          <button mat-menu-item routerLink="/sign-up" class="auth-link">
+            Register
+          </button>
+        </mat-menu>
       </div>
       <div>
         <a routerLink="/cart">
@@ -31,4 +57,13 @@
       </div>
     </div>
   </nav>
+
+  <mat-menu #afterMenu="matMenu" xPosition="after">
+    <button mat-menu-item routerLink="" class="nav-btn">Home</button>
+    <button mat-menu-item routerLink="/products" class="nav-btn">
+      Products
+    </button>
+    <button mat-menu-item routerLink="/about" class="nav-btn">About Us</button>
+    <button mat-menu-item routerLink="/contact" class="nav-btn">Contact</button>
+  </mat-menu>
 </header>

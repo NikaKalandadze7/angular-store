@@ -4,6 +4,18 @@
   box-sizing: border-box;
   text-decoration: none;
   outline: none;
+  list-style-type: none;
+}
+:root {
+  --color-header: #f08080;
+  --color-header-text: #ffffff;
+  --color-footer: #1c1c1c;
+  --color-background: #ffe4e1;
+  --color-text: #333333;
+  --color-accent: #ff7f50;
+  --color-secondary-accent: #80cbc4;
+  --color-tretiary-accent: #ff4400;
+  --color-border: #cccccc;
 }
 a:hover {
   cursor: pointer;
@@ -15,7 +27,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #ffe4e1;
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
 }
@@ -25,16 +37,6 @@ app-root {
   height: 100%;
 }
 
-:root {
-  --color-header: #f08080;
-  --color-header-text: #ffffff;
-  --color-footer: #1c1c1c;
-  --color-background: #ffe4e1;
-  --color-text: #333333;
-  --color-accent: #ff7f50;
-  --color-secondary-accent: #80cbc4;
-  --color-border: #cccccc;
-}
 .container {
   max-width: 1350px;
   display: flex;
@@ -43,5 +45,5 @@ app-root {
   align-items: center;
   margin: 40px auto;
   height: 100%;
-  min-height: 50vh;
+  min-height: 70vh;
 }
