@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 
 import { RegisterComponent } from './register/register.component';
 import { MatInputModule } from '@angular/material/input';
@@ -21,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
+    RouterModule,
   ],
 })
 export class AuthModule {}

@@ -6,6 +6,6 @@ import { appRoutes } from '../../app.module';
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [CommonModule, RouterModule.forRoot(appRoutes)],
+  imports: [CommonModule, RouterModule],
 })
 export class HomeModule {}

@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    // Subscribe to the cart quantity observable
     this.cartSubscription = this.cartService
       .getCartQuantityObservable()
       .subscribe((quantity) => {
@@ -24,7 +23,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // Unsubscribe to avoid memory leaks
     if (this.cartSubscription) {
       this.cartSubscription.unsubscribe();
     }

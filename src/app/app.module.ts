@@ -19,6 +19,7 @@ import { ContactModule } from './pages/contact/contact.module';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { AuthModule } from './pages/auth/auth.module';
+import { HomeModule } from './pages/home/home.module';
 
 export const appRoutes: Routes = [
   // { path: '', redirectTo: 'home' },
@@ -44,6 +45,7 @@ export const appRoutes: Routes = [
     CommonModule,
     ContactModule,
     AuthModule,
+    HomeModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
