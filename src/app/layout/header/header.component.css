@@ -69,6 +69,12 @@
   justify-content: space-between;
   gap: 30px;
 }
+.logo-2 {
+  display: none;
+}
+.logo {
+  display: block;
+}
 .auth-logo {
   font-size: 32px;
 }
@@ -114,6 +120,17 @@
   .nav-menu {
     display: none;
   }
+  .logo {
+    display: none;
+  }
+  .logo-2 {
+    display: block !important;
+    flex-flow: row wrap;
+    font-size: 52px;
+  }
+  .logo-text {
+    display: none;
+  }
 
   .menu-toggle {
     display: block;
@@ -136,10 +153,6 @@
 @media (max-width: 480px) {
   .header {
     padding: 0 10px;
-  }
-
-  .logo-text {
-    display: none;
   }
 
   .auth-link {

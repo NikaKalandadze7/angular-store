@@ -1,6 +1,11 @@
 <div class="container">
   <div class="cart-container">
-    <h2 class="cart-header">Your Cart:</h2>
+    <h2
+      class="cart-header"
+      [ngStyle]="{ color: cart && cart.length ? '#80cbc4' : '#ff4400' }"
+    >
+      Your Cart:
+    </h2>
     <div *ngFor="let item of cart">
       <div appearance="outlined" class="cart-card">
         <img src="{{ item.image }}" class="cart-image" />
@@ -19,12 +24,27 @@
           </div>
         </div>
         <div class="cart-item-end">
+          <button mat-mini-fab (click)="addQuantity(item)" class="mini-btn-1">
+            <mat-icon>add_shopping_cart</mat-icon>
+          </button>
           <p class="product-quantity">
             <span>{{ item.quantity }}</span>
           </p>
-          <button mat-fab extended (click)="removeFromCart(item.id)">
+          <button
+            mat-fab
+            extended
+            (click)="removeFromCart(item.id)"
+            class="remove-btn"
+          >
             <mat-icon>remove_shopping_cart</mat-icon>
             Remove
+          </button>
+          <button
+            mat-mini-fab
+            (click)="removeFromCart(item.id)"
+            class="mini-btn-2"
+          >
+            <mat-icon>remove_shopping_cart</mat-icon>
           </button>
         </div>
       </div>

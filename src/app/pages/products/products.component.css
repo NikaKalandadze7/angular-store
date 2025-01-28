@@ -9,4 +9,22 @@
 .category-dropdown {
   display: flex;
   flex-direction: row;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .products-list {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-dropdown {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
 }

@@ -21,3 +21,56 @@ h4 {
   align-items: center;
   gap: 20px;
 }
+@media (max-width: 768px) {
+  .name {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .small-input {
+    width: 100%;
+  }
+
+  .large-input {
+    font-size: 14px;
+  }
+
+  .send-btn {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    width: 90%;
+    padding: 20px 0;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .name {
+    gap: 10px;
+  }
+
+  .small-input,
+  .large-input {
+    font-size: 12px;
+  }
+
+  .large-input {
+    padding: 5px;
+  }
+
+  .send-btn {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  p {
+    font-size: 12px;
+    text-align: center;
+  }
+}

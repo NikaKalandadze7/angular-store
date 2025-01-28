@@ -5,6 +5,10 @@ mat-card {
   overflow: hidden;
   transition: 0.2s;
   z-index: 1;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 mat-card:hover {
   transform: rotate(2deg) scale(1.05);
@@ -35,6 +39,7 @@ mat-card:hover {
 .product-price {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-size: 12px;
   color: var(--color-accent);
@@ -50,7 +55,9 @@ mat-card:hover {
   font-weight: bold;
   color: var(--color-tretiary-accent);
 }
-
+.top-discount {
+  color: var(--color-top-discount-accent);
+}
 .discount-percentage {
   color: var(--color-secondary-accent);
   font-weight: bold;
@@ -60,4 +67,47 @@ mat-card:hover {
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
+}
+@media (max-width: 768px) {
+  .product-title {
+    font-size: 12px;
+  }
+  .product-price {
+    font-size: 10px;
+  }
+  .discounted-price {
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  mat-card-header,
+  .product-title {
+    padding: 12px;
+    max-width: 250px;
+    width: 250px;
+  }
+
+  mat-card {
+    width: 350px;
+  }
+  .image {
+    max-width: 320px;
+    max-height: 150px;
+  }
+  .product-image {
+    max-width: 320px;
+    max-height: 150px;
+  }
+  .product-title {
+    font-size: 18px;
+  }
+  .product-price {
+    font-size: 16px;
+  }
+  .discounted-price {
+    font-size: 18px;
+  }
+  .card-buttons {
+    max-width: 320px;
+  }
 }

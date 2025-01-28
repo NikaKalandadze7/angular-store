@@ -5,17 +5,17 @@
     <mat-card-content
       ><form class="contact-form">
         <div class="name">
-          <mat-form-field class="">
+          <mat-form-field class="small-input">
             <mat-label>First name</mat-label>
             <input matInput />
           </mat-form-field>
-          <mat-form-field class="">
+          <mat-form-field class="small-input">
             <mat-label>Last Name</mat-label>
             <input matInput />
           </mat-form-field>
         </div>
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="large-input">
           <mat-label>Email</mat-label>
           <input
             type="email"
@@ -30,12 +30,12 @@
           <mat-error>Email is <strong>required</strong></mat-error>
           }
         </mat-form-field>
-        <mat-form-field class="">
+        <mat-form-field class="large-input">
           <mat-label>Telephone</mat-label>
           <span matTextPrefix>+995 &nbsp;</span>
           <input type="tel" matInput placeholder="555-555-555" />
         </mat-form-field>
-        <button mat-raised-button>Send</button>
+        <button mat-raised-button class="send-btn">Send</button>
       </form>
     </mat-card-content>
     <p>You Can also Contact us at +995-555-555-555</p>

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../core/services/products.service';
 import { take } from 'rxjs';
+import { Product } from '../../core/interfaces/product.interface';
 
 @Component({
   selector: 'app-products',
@@ -9,16 +10,20 @@ import { take } from 'rxjs';
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })
-export class ProductsComponent {
-  productData: any[] = [];
+export class ProductsComponent implements OnInit {
+  productData: Product[] = [];
   categoryData: string[] = [];
-  filteredProducts: any[] = [];
+  filteredProducts: Product[] = [];
   selectedCategory: string = '';
   constructor(private productsService: ProductsService) {}
   searchQuery: string = '';
 
   ngOnInit() {
-    //products fetch service
+    this.fetchProducts();
+
+    this.fetchCategories();
+  }
+  private fetchProducts() {
     this.productsService
       .getProducts()
       .pipe(take(1))
@@ -26,8 +31,8 @@ export class ProductsComponent {
         this.productData = response.products;
         this.filteredProducts = this.productData;
       });
-
-    //categories fetch service
+  }
+  private fetchCategories() {
     this.productsService
       .getCategories()
       .pipe(take(1))
@@ -36,12 +41,10 @@ export class ProductsComponent {
       });
   }
 
-  //get products based on category
   onCategoryChange(category: string) {
     this.selectedCategory = category;
     this.applyFilters();
   }
-  //search functionality
   onSearchQueryChange(query: string) {
     this.searchQuery = query;
     this.applyFilters();

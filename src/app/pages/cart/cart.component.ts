@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../core/services/cart.service';
+import {
+  ExtendedProduct,
+  Product,
+} from '../../core/interfaces/product.interface';
 
 @Component({
   selector: 'app-cart',
   standalone: false,
-
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
 export class CartComponent implements OnInit {
-  cart: any[] = [];
+  cart: ExtendedProduct[] = [];
   cartTotalPrice: number = 0;
   cartTotalQuantity: number = 0;
+
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
@@ -26,12 +30,19 @@ export class CartComponent implements OnInit {
     this.cartTotalPrice = this.cartService.getCartTotalPrice();
     this.cartTotalQuantity = this.cartService.getCartTotalQuantity();
   }
-  addToCart(item: any) {
-    this.addToCart(item);
+
+  addToCart(item: Product) {
+    this.cartService.addToCart(item);
+    this.cart = this.cartService.getCart();
     this.cartTotalPrice = this.cartService.getCartTotalPrice();
     this.cartTotalQuantity = this.cartService.getCartTotalQuantity();
   }
 
+  addQuantity(item: Product) {
+    this.cartService.addQuantityInCart(item);
+    this.cartTotalPrice = this.cartService.getCartTotalPrice();
+    this.cartTotalQuantity = this.cartService.getCartTotalQuantity();
+  }
   checkout() {
     console.log('Go to checkout');
   }

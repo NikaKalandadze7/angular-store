@@ -27,3 +27,67 @@ h4 {
 .register-btn {
   margin-top: 55px;
 }
+@media (max-width: 768px) {
+  .name {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .small-input {
+    width: 100%;
+  }
+
+  .large-input {
+    font-size: 14px;
+  }
+
+  .register-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+    margin-top: 40px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .click-here {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register {
+    width: 90%;
+    padding: 20px 0;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  .name {
+    gap: 10px;
+  }
+
+  .small-input,
+  .large-input {
+    font-size: 12px;
+  }
+
+  .register-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin-top: 30px;
+  }
+
+  .click-here {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 12px;
+    text-align: center;
+  }
+}

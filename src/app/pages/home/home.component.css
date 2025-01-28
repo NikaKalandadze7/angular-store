@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20;
+  padding: 20px;
 }
 .home-section-1,
 .home-section-2 {
@@ -38,7 +38,8 @@
 .home-text {
   color: var(--color-accent);
 }
-.explore-button {
+.explore-button,
+.explore-button-2 {
   background-color: var(--color-secondary-accent);
   font-size: 24px;
   color: white;
@@ -48,8 +49,13 @@
   width: 200px;
   height: 50px;
   transition: 0.3s;
+  z-index: 12;
 }
-.explore-button:hover {
+.explore-button-2 {
+  display: none;
+}
+.explore-button:hover,
+.explore-button-2:hover {
   background-color: #ff7f50;
   cursor: pointer;
   transition: 0.3s;
@@ -183,12 +189,11 @@
   }
 
   .explore-button {
-    position: absolute;
-    bottom: 20%;
-    right: 10%;
-    z-index: 12;
+    display: none;
   }
-
+  .explore-button-2 {
+    display: block;
+  }
   .home-stats {
     display: flex;
     flex-flow: row nowrap;
@@ -224,11 +229,11 @@
     gap: 20px;
   }
 
-  .explore-button {
+  .explore-button,
+  .explore-button-2 {
     width: 140px;
     font-size: 20px;
     bottom: 380px;
     right: 12%;
-    z-index: 12;
   }
 }

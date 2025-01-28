@@ -12,9 +12,13 @@
     <mat-card-subtitle class="product-price">
       <ng-container *ngIf="item.discount > 5; else noDiscount">
         <span class="old-price">{{ item.price | currency }}</span>
-        <span class="discounted-price">{{
-          item.price - (item.price * item.discount) / 100 | currency
-        }}</span>
+        <span
+          class="discounted-price"
+          [ngClass]="{ 'top-discount': item.discount > 10 }"
+          >{{
+            item.price - (item.price * item.discount) / 100 | currency
+          }}</span
+        >
         <span class="discount-percentage">({{ item.discount }}% off)</span>
       </ng-container>
       <ng-template #noDiscount>
@@ -22,11 +26,6 @@
       </ng-template>
     </mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content>
-    <p>
-      {{ item.body }}
-    </p>
-  </mat-card-content>
   <mat-card-actions class="card-buttons">
     <button mat-button (click)="addToCart(item)">Add to cart</button>
     <button mat-button [routerLink]="'/products/' + item.id">MORE</button>

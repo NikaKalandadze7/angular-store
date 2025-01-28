@@ -20,6 +20,7 @@
 .person-section {
   border-radius: 20px;
   background-color: #eee;
+  min-width: 250px;
   width: calc(25% - 40px);
   display: flex;
   flex-flow: column nowrap;
@@ -36,6 +37,7 @@
 }
 .about-person {
   width: 80%;
+  font-size: 16px;
 }
 .profile-img {
   height: 120px;
@@ -61,4 +63,59 @@
 .socials-logo:hover {
   color: var(--color-accent);
   transition: 0.3s;
+}
+@media (max-width: 1024px) {
+  .person-section {
+    width: calc(33.33% - 20px);
+  }
+  .about-header {
+    font-size: 34px;
+  }
+  .person-name {
+    font-size: 16px;
+  }
+  .position {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .person-section {
+    width: calc(50% - 20px);
+  }
+  .about-header {
+    font-size: 30px;
+  }
+  .person-name {
+    font-size: 14px;
+  }
+  .position {
+    font-size: 10px;
+  }
+  .about-person {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .person-section {
+    width: calc(50% - 20px);
+  }
+  .about-header {
+    font-size: 24px;
+    text-align: center;
+  }
+  .profile-img {
+    height: 100px;
+    width: 100px;
+  }
+  .person-name {
+    font-size: 12px;
+  }
+  .position {
+    font-size: 9px;
+  }
+  .about-person {
+    font-size: 12px;
+  }
 }

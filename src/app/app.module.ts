@@ -20,7 +20,7 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { AuthModule } from './pages/auth/auth.module';
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   // { path: '', redirectTo: 'home' },
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },

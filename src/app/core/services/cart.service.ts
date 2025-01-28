@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
+import { ExtendedProduct, Product } from '../interfaces/product.interface';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  private cart: any[] = [];
-
+  private cart: ExtendedProduct[] = [];
+  private cartSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   constructor() {
     const storedCart = localStorage.getItem('cart');
     this.cart = storedCart ? JSON.parse(storedCart) : [];
+    this.updateCartQuantity();
   }
 
   getCart() {
     return this.cart;
   }
 
-  addToCart(item: any) {
+  addToCart(item: Product) {
     const existingItem = this.cart.find((cartItem) => cartItem.id === item.id);
     if (existingItem) {
       existingItem.quantity += 1;
@@ -27,6 +30,7 @@ export class CartService {
       this.cart.push({ ...item, quantity: 1, discountedPrice });
     }
     this.saveCart();
+    this.updateCartQuantity();
   }
 
   removeFromCart(itemId: number) {
@@ -38,12 +42,21 @@ export class CartService {
         this.cart.splice(itemIndex, 1);
       }
       this.saveCart();
+      this.updateCartQuantity();
     }
   }
-  addQuantityInCart(item: any) {}
+  addQuantityInCart(item: Product) {
+    const existingItem = this.cart.find((cartItem) => cartItem.id === item.id);
+    if (existingItem) {
+      existingItem.quantity += 1;
+
+      this.saveCart();
+    }
+  }
   clearCart() {
     this.cart = [];
     this.saveCart();
+    this.updateCartQuantity();
   }
 
   getCartTotalPrice() {
@@ -55,7 +68,14 @@ export class CartService {
   getCartTotalQuantity() {
     return this.cart.reduce((total, item) => total + item.quantity, 0);
   }
+  private updateCartQuantity() {
+    const totalQuantity = this.getCartTotalQuantity();
+    this.cartSubject.next(totalQuantity);
+  }
   private saveCart() {
     localStorage.setItem('cart', JSON.stringify(this.cart));
+  }
+  getCartQuantityObservable() {
+    return this.cartSubject.asObservable();
   }
 }

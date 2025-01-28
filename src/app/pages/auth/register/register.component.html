@@ -5,7 +5,7 @@
     <mat-card-content>
       <form class="register-form" [formGroup]="registerForm">
         <div class="name">
-          <mat-form-field>
+          <mat-form-field class="small-input">
             <mat-label>First Name</mat-label>
             <input matInput formControlName="firstName" />
             <mat-error *ngIf="firstNameFormControl.hasError('required')">
@@ -13,7 +13,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field>
+          <mat-form-field class="small-input">
             <mat-label>Last Name</mat-label>
             <input matInput formControlName="lastName" />
             <mat-error *ngIf="lastNameFormControl.hasError('required')">
@@ -22,7 +22,7 @@
           </mat-form-field>
         </div>
 
-        <mat-form-field>
+        <mat-form-field class="large-input">
           <mat-label>Telephone</mat-label>
           <span matTextPrefix>+995 &nbsp;</span>
           <input
@@ -39,7 +39,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="large-input">
           <mat-label>Email</mat-label>
           <input
             type="email"
@@ -55,7 +55,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="large-input">
           <mat-label>Password</mat-label>
           <input
             type="password"
@@ -75,7 +75,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="large-input">
           <mat-label>Confirm Password</mat-label>
           <input
             type="password"
