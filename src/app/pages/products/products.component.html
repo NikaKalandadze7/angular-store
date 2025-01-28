@@ -6,12 +6,9 @@
       (searchQueryChange)="onSearchQueryChange($event)"
     ></app-product-filters>
   </div>
-  <div class="products-list" *ngIf="filteredProducts">
+  <div class="products-list">
     <div *ngFor="let item of filteredProducts">
       <app-product-card [item]="item"></app-product-card>
     </div>
-    <ng-template #loading>
-      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    </ng-template>
   </div>
 </div>
